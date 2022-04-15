@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment2</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.18/"></script>
+    <script>
+
+        require(
+            ["esri/config",
+                "esri/Map",
+                "esri/views/MapView",
+                //"esri/layers/ArcGISDynamicMapServiceLayer",
+                "esri/layers/GraphicsLayer",
+
+                "esri/widgets/BasemapToggle",
+                "esri/widgets/BasemapGallery",
+                "esri/widgets/Fullscreen",
+                "esri/widgets/Zoom",
+                "dojo/domReady!"
+            ],
+            function (esriConfig, Map, MapView, GraphicsLayer, //ArcGISDynamicMapServiceLayer,
+                BasemapToggle, BasemapGallery, Fullscreen, Zoom) {
+
+                var map = new Map({
+                    basemap: "satellite"
+                });
+                var view = new MapView({
+                    container: "viewDiv",
+                    map: map,
+                    center: [114.76, 25.80],//影像中心
+                    zoom: 10
+                });
+                // // 加载已发布的底图
+                // var myDynamicMapServiceLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/SampleWorldCities/MapServer");
+                // map.addLayer(myDynamicMapServiceLayer);
+                // var GraphicsLayer = new GraphicsLayer();
+                // var layer = new MapImageLayer({
+                //     url: "http://localhost:6080/arcgis/rest/services/SampleWorldCities/MapServer"
+                // });
+
+                // map.add(layer);
+                //basemapToggle小部件用来切换底图
+                var BasemapToggle = new BasemapToggle({
+                    view: view,
+                    nextBasemap: "osm"
+                });
+                //然后将小部件添加到视图的右侧
+                view.ui.add(BasemapToggle, "bottom-right");
+                var BasemapGallery = new BasemapGallery({
+                    view: view,
+                    source: {
+                        portal: {
+                            url: "https://www.arcgis.com",
+                            useVectorBasemaps: true
+                        }
+                    }
+                });
+                //通过小部件添加到视图
+                view.ui.add(BasemapGallery, "top-right")
+
+                //全屏显示
+                var fullscreen = new Fullscreen({
+                    view: view
+                });
+                view.ui.add(fullscreen, "bottom-left")
+
+            });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Simple Map</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.7/js/esri/css/esri.css" />
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/4.18/esri/themes/light/main.css" />
+    <!-- <script type="text/javascript" src="http://localhost/arcgis_js_v46_api/arcgis_js_api/library/4.6/init.js"></script> -->
+    <style>
+      html, body, #viewDiv {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="http://js.arcgis.com/4.18/"></script>
+    <script>
+      require(["esri/Map","esri/layers/MapImageLayer","esri/views/MapView","esri/widgets/Fullscreen","esri/widgets/Zoom","dojo/domReady!"], function(Map,MapImageLayer,MapView,Fullscreen,Zoom) {
+        var GanZhoulayer = new MapImageLayer({url: "http://localhost:6080/arcgis/rest/services/MyMapService/MapServer",opacity: 0.75});
+
+        var map = new Map({
+          basemap:"streets-navigation-vector",
+          // layers:[GanZhoulayer],//图层
+          // sliderStyle:"small"
+        });
+        map.add(GanZhoulayer);
+//URL为自定义发布的地图服务，请参见《ArcGis API for JavaScript开发笔记——发布服务.note》
+        // var myDynamicMapServiceLayer=new esri.layers.ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/MyMapService/MapServer");
+        // map.addLayer(myDynamicMapServiceLayer);
+        var view = new MapView({ 
+          container: "viewDiv",
+          map: map,
+          zoom: 8,
+          center: [116.21,26.19]
+        });
+
+        var zoom = new Zoom({
+          view: view
+        }); 
+        //全图显示 
+        fullscreen = new Fullscreen({
+          view: view 
+        }); 
+        view.ui.add(fullscreen,"top-left");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
