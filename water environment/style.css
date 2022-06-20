@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Microsoft YaHei";
+    color: #fff;
+}
+
+section{
+    /* 相对定位,允许与页面中的其它元素重叠 */
+    position: relative;
+    /* height:100vh，该元素会被撑开屏幕高度一致。 */
+    height: 100vh;
+    width: 100%;
+    background: url("images/djy2.jpeg");
+    /* 铺满整个屏幕 */
+    background-size: cover;
+    background-position: center center;
+}
+/* 1.首先外层盒子section设置了宽和高，因为是父级所以设置了相对定位，默认位置在左上角，并设置了背景。
+
+2.齐次是子元素.form-container，将其绝对定位，给定宽高，并让其位置定位在画面中心的右下角（想象屏幕中间有一个十字，这个.form-container就紧贴着第四象限），然后利用transform属性，将其往左平移.form-container自身长度的50%，往上平移.form-container自身长度的50%，这样中间的盒子就居中了。这一步都可以用浏览器的调试工具来自己调，动态看效果，很容易就可以明白 */
+
+.form-container{
+    position :absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。 */
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0));
+    width: 380px;
+    padding: 50px 30px;
+    /* 圆角边框 */
+    border-radius: 10px;
+    /* box-shadow 属性用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。该属性可设置的值包括阴影的X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色。 */
+    box-shadow: 7px 7px 60px #000;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.control input{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    color: #222;
+    border:none;
+    outline: none;
+    margin: 1em 0; 
+}
+.control input[type="submit"]{
+    background-color: crimson;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: 1.2em;
+    opacity: .8;
+    transition: opacity .3s ease;
+}
+
+.control input[type="submit"]:hover{
+    opacity: 1;
+}
+
+.link{
+    text-align: center;
+}
+
+.link a{
+    text-decoration: none;
+    color: #fff;
+    opacity: .6;
+    transition:opacity .3s ease;
+}
+.z{
+float: left !important;
+}
+
+.y{
+    float:right !important;
+}
+.link a:hover{
+    opacity:1 ;
+}

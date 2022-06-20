@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水仙花</title>
+    <script type="text/javascript">
+        document.write("水仙花数有：");
+        for (var i = 100; i < 1000; i++) {
+            var a = i % 10;//取出个位数
+            var b = (i % 100) / 10;//取出十位数，先将三位数化为两位数，再通过取余取到十位
+            b = parseInt(b);
+            var c = i / 100;
+            c = parseInt(c);
+            if (i == (a * a * a + b * b * b + c * c * c)) { document.write(i + ",") }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

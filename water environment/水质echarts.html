@@ -1,0 +1,49 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=effectScatter-bmap
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.CSS">
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div class="logo">
+        <a href="#">流域水质遥感监测平台</a>
+    </div>
+    <div><a href="Interpolation.html">主页</a></div>
+    <div><a href="#">遥感反演</a></div>
+    <div><a href="水质echarts.html">水质监测</a></div>
+    <div><a href="#">土地监测</a></div>
+    <div><a href="#">数据中心</a></div>
+    <div><a href="#">个人页面</a></div>
+    <div id="bmap"></div>
+    <div id="scatter"></div>
+    <div id="parallel"></div>
+    <div id="shuizhifenlei"></div>
+
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension -->
+    <script type="text/javascript"
+        src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
+    <!-- Uncomment these two lines if you want to use bmap extension -->
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=3.0&ak=jaR3864Fz3xYVdmRe8LUCZ1e5b7Zbhmt"></script>
+    <script type="text/javascript"
+        src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/平行坐标.js"></script>
+    <script type="text/javascript" src="js/氨氮总氮散点图.js"></script>
+    <script src="js/水质占比饼图.js"></script>
+    <style type="text/css">
+        .anchorBL {
+            display: none
+        }
+    </style>
+
+</body>
+
+</html>

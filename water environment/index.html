@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="form-container">
+            <h1>登录</h1>
+            <form action="#">
+                <div class="control">
+                    <label for="name">姓名</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="control">
+                    <label for="pwd">密码</label>
+                    <input type="password" name="pwd" id="psw">
+                </div>
+                <span>
+                    <label id="persistUser"><input type="checkbox" name="persist" id="persistUser">记住密码</label>
+                </span>
+                <div class="control">
+                    <!-- <input type="submit" value="登录"> -->
+                    <input type="submit" value="登录" onclick='location.href=("Interpolation.html") ,window.event.returnValue=false' >
+                </div>
+
+            </form>
+            <div class=" link">
+                <a href="#" class='z'>账号注册</a>
+                <a href="#" class='y'>忘记密码</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

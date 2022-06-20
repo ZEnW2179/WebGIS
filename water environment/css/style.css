@@ -1,0 +1,64 @@
+div {
+    display: inline-block;
+}
+
+.logo a {
+    width: 180px;
+    height: 83px;
+    left:3px;
+    background-color: #fff;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 83px;
+    font-family: inherit;
+
+    color: rgb(110, 109, 122);
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+
+}
+
+div a {
+    width: 100px;
+    height: 83px;
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 83px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    color: rgb(110, 109, 122);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+a:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+/* 水质检测div */
+#bmap {
+    width: 650px;height:400px;left: 500px;;top:84px;
+    position: absolute;
+}
+
+#scatter{
+    width: 500px;height:310px;left:0%;top:84px;
+    position: absolute;
+
+}
+
+#parallel{
+    width: 650px;height: 250px;bottom: 0%;left: 500px;
+    position: absolute;
+
+}
+
+#shuizhifenlei{
+    width: 500px;height: 330px;bottom: 0%;left: 0%;
+    position: absolute;
+
+}
+

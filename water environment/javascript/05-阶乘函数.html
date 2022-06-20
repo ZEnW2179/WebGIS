@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阶乘函数</title>
+    <script type="text/javascript">
+        //定义阶乘函数，计算平方值的函数
+        function fun(a) {
+            function multi(x) {
+                return x * x;
+            }
+            var m = 1;
+            for (var i = 1; i <= multi(a); i++) {
+                m = m * i;
+            }
+            return m;
+        }
+        var sum = fun(2);
+        document.write(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
